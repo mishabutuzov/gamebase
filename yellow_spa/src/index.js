@@ -5,8 +5,8 @@ import DescriptionPage from "./Components/DescriptionPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/*<App />*/}
-      <DescriptionPage/>
+    <App />
+    {/*  <DescriptionPage/>*/}
   </React.StrictMode>,
   document.getElementById('root')
 );

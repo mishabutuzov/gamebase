@@ -167,9 +167,13 @@ nav, section {
 }
 
 .card{
-    margin: 10px;
+    margin-bottom: 20px;
     background-color: #373737;
     border-radius: 10px;
+flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 100px;
+    max-width: 599px;
 }
 
 .card__image{
@@ -204,6 +208,14 @@ nav, section {
 
 .about__section h2,span{
     margin-left: 10px;
+}
+
+.global__card__container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+
 }
 
 /*.app {*/
