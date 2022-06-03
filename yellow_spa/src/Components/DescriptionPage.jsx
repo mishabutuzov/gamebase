@@ -5,8 +5,8 @@ import {faSearch} from "@fortawesome/free-solid-svg-icons";
 
 function DescriptionPage(props) {
     return (
-        <div>
-            <nav>
+        <div className='description__main__div'>
+            <nav className='main__nav'>
                 <div className="navbar__logo">RAWG</div>
                 <div className="navbar__container">
                     <FontAwesomeIcon className='navbar__icon' icon={faSearch}/>
@@ -14,15 +14,16 @@ function DescriptionPage(props) {
                 </div>
             </nav>
 
-            <section className='description__page__container'>
+            <section className='description__page__global__container'>
+            <div className='description__page__container'>
                 <div className='description__page__container__title'><b>
                     TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle
                 </b>
                 </div>
-                <div>
+                <div className='description__page__container__rating'>
                     5.22
                 </div>
-            </section>
+            </div>
 
             <Carousel>
                 <CarouselItem><img style={{width: '100%', objectFit: 'cover'}}
@@ -36,6 +37,8 @@ function DescriptionPage(props) {
                                    src="https://media.rawg.io/media/screenshots/727/7278d0a6c35375ede5112518520c75ed.jpg"
                                    alt=""/></CarouselItem>
             </Carousel>
+            </section>
+
 
             <section className='about__section'>
                 <h2>About</h2>
@@ -44,7 +47,12 @@ function DescriptionPage(props) {
                 </span>
             </section>
 
-
+            <section className='website__section'>
+                <h2>Website</h2>
+                <span>
+                    www.oppa.ru
+                </span>
+            </section>
         </div>
     );
 }
