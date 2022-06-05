@@ -1,77 +1,92 @@
 // import {postAPI} from "../api/api";
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import axios from "axios";
-import {store} from "../index";
+
+const defaultState = {
+    status: null,
+    gamesList: [],
+    // [{url:'www.han.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'}],
+
+    searchInput: '',
+    page: 1,
+    count: 1,
+    isEndOfList: false,
+    selectedPlatform: 0,
+    selectedSort: 'ALL'
+}
+
+export const getAllGames = createAsyncThunk(
+    'gameSlice/getAllGames',
+    async ({page, pageSize, search}, {getState}) => {
+
+        const selectedPlatform = getState().game.selectedPlatform;
+        const selectedSort = getState().game.selectedSort;
+
+        const BASE_URL = 'https://api.rawg.io/api/';
 
 
+        let url = new URL(`${BASE_URL}games?page=${page}&page_size=${pageSize}&search=${search}&search_exact=true`);
+        selectedPlatform !== 0 && url.searchParams.append('parent_platforms', selectedPlatform);
+        selectedSort !== 'ALL' && url.searchParams.append('ordering', selectedSort)
 
-// export const fetchMoreData = async () => {
-//     try {
-//         const response = await axios.get(
-//             `https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=10`
-//         );
-//         if (response) {
-//             setImage([...image, ...response.data]);
-//             setPage(page + 1);
-//         }
-//         console.log(response.data);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
 
-export const fetchMoreGamesData = createAsyncThunk(
-    'gameSlice/fetchMoreGamesData',
-    async ({page}) => {
-        console.log('THUNK')
+        url.searchParams.append('key', '2602e4a916714a89a8d328d9f606b1aa');
         let requestOptions = {
             method: 'GET',
             redirect: 'follow'
         }
-        return await fetch(`https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=10`, requestOptions)
+
+        return await fetch(url, requestOptions)
             .then(res => res.json())
     }
 );
 
 
-// export const getAllGames = createAsyncThunk(
-//     'gameSlice/getAllGames',
-//     async ({page,pageSize}) => {
-//         let requestOptions = {
-//             method: 'GET',
-//             redirect: 'follow'
-//         }
-//         return await fetch(`https://api.rawg.io/api/games?page=${page}&page_size=${pageSize}&key=2602e4a916714a89a8d328d9f606b1aa`, requestOptions)
-//             .then(res => res.json())
-//     }
-// );
-
-const defaultState = {
-    status:null,
-    gamesList:[{url:'www.han.ru'}]
-        // [{url:'www.han.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'}],
-    ,scrollPageMain:1
-}
-
-
 const gameSlice = createSlice({
     name: 'gameSlice',              //CHTO ETO????????????
     initialState: defaultState,  //OK!!!!!!!!!!!!!
+    reducers: {
+        setSearchInput: (state, action) => {
+            state.page = 1;
+            state.gamesList = [];
+            state.searchInput = action.payload;
+        },
+        setPage: (state, action) => {
+            state.page = action.payload;
+        },
+        setPlatform: (state, action) => {
+            state.page = 1;
+            state.gamesList = [];
+            state.selectedPlatform = +action.payload;
+        },
+        setSort: (state, action) => {
+            state.page = 1;
+            state.gamesList = [];
+            state.selectedSort = action.payload;
+        }
+    },
     extraReducers: {
-        [fetchMoreGamesData.pending]: (state, action) => {
+        [getAllGames.pending]: (state, action) => {
             console.log('ZAPROS')
             state.status = 'loading'
 
         },
-        [fetchMoreGamesData.fulfilled]: (state, {payload}) => {
+        [getAllGames.fulfilled]: (state, {payload}) => {
             console.log(payload)
+            state.count = payload.count;
 
-            state.gamesList = [...state.gamesList,...payload]
+            if (payload.hasOwnProperty('results')) {
+                if (payload.results.length > 0) {
+                    state.gamesList = [...state.gamesList, ...payload.results];
+                    state.isEndOfList = false;
+                }
+            } else {
+                state.isEndOfList = true;
+            }
+
             console.log('POLUCHILI')
             state.status = 'success'
-            state.scrollPageMain =  state.scrollPageMain + 1;
         },
-        [fetchMoreGamesData.rejected]: (state, action) => {
+        [getAllGames.rejected]: (state, action) => {
             state.status = 'failed'
             console.log('OTPROS')
 
@@ -79,5 +94,5 @@ const gameSlice = createSlice({
     }
 })
 
-// export const { todoAdded, todoToggled } = gameSlice.actions
+export const {setSearchInput, setPage, setPlatform, setSort} = gameSlice.actions
 export default gameSlice.reducer

@@ -2,12 +2,21 @@ import React from 'react';
 import Carousel, {CarouselItem} from "./Carousel/Carousel";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import { useParams } from 'react-router-dom';
+import {useNavigate} from "react-router";
 
 function DescriptionPage(props) {
+    let { id } = useParams();
+    const navigate = useNavigate();
+
     return (
         <div className='description__main__div'>
             <nav className='main__nav'>
-                <div className="navbar__logo">RAWG</div>
+                <div className="navbar__logo" onClick={
+                    ()=>{
+                        navigate('/')
+                    }
+                }>RAWG {id} </div>
                 <div className="navbar__container">
                     <FontAwesomeIcon className='navbar__icon' icon={faSearch}/>
                     <input placeholder="Search for games" type="search" className="navbar__input"/>
