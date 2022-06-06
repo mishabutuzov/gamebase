@@ -1,22 +1,55 @@
-import React from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import Carousel, {CarouselItem} from "./Carousel/Carousel";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useNavigate} from "react-router";
+import {useDispatch, useSelector} from "react-redux";
+import {getGameDetails, getGameScreenshots, resetDetailsToDefault} from "../Redux/gameDetailsReducer";
+import loadingImg from '../common/images/loading.jpg'
+import parse from 'html-react-parser'
 
 function DescriptionPage(props) {
-    let { id } = useParams();
+    let {id} = useParams();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const title = useSelector(state => state.details.title);
+    const description = useSelector(state => state.details.description);
+    const rating = useSelector(state => state.details.rating);
+    const website = useSelector(state => state.details.website);
+
+    const screenshots = useSelector(state => state.details.screenshots)
+
+    const fetchDescriptionData = async () => {
+        await dispatch(getGameDetails({id}))
+        await dispatch(getGameScreenshots({id}))
+    };
+
+    useEffect(() => {
+        fetchDescriptionData()
+            .then(() => console.log('fetchDescriptionData DONE'));
+    }, [])
+
+    useLayoutEffect(() => {
+        return () => {
+            // Your code here.
+            dispatch(resetDetailsToDefault())
+            console.log('UNMOUNT')
+
+        }
+    }, [])
+
 
     return (
         <div className='description__main__div'>
             <nav className='main__nav'>
                 <div className="navbar__logo" onClick={
-                    ()=>{
+                    () => {
                         navigate('/')
                     }
-                }>RAWG {id} </div>
+                }>RAWG
+                </div>
                 <div className="navbar__container">
                     <FontAwesomeIcon className='navbar__icon' icon={faSearch}/>
                     <input placeholder="Search for games" type="search" className="navbar__input"/>
@@ -24,42 +57,44 @@ function DescriptionPage(props) {
             </nav>
 
             <section className='description__page__global__container'>
-            <div className='description__page__container'>
-                <div className='description__page__container__title'><b>
-                    TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle
-                </b>
+                <div className='description__page__container'>
+                    <div className='description__page__container__title'><b>
+                        {title}
+                    </b>
+                    </div>
+                    <div className='description__page__container__rating'>
+                        {rating}
+                    </div>
                 </div>
-                <div className='description__page__container__rating'>
-                    5.22
-                </div>
-            </div>
 
-            <Carousel>
-                <CarouselItem><img style={{width: '100%', objectFit: 'cover'}}
-                                   src="https://media.rawg.io/media/screenshots/b7d/b7d0a152bde95710a936708c66897a4d.jpg"
-                                   alt=""/></CarouselItem>
-                {/*<CarouselItem><img style={{height: 'auto', width: 'auto'}} src="https://media.rawg.io/media/screenshots/727/7278d0a6c35375ede5112518520c75ed.jpg" alt=""/></CarouselItem>*/}
-                <CarouselItem><img style={{width: '100%', objectFit: 'cover'}}
-                                   src="https://media.rawg.io/media/screenshots/727/7278d0a6c35375ede5112518520c75ed.jpg"
-                                   alt=""/></CarouselItem>
-                <CarouselItem><img style={{width: '100%', objectFit: 'cover'}}
-                                   src="https://media.rawg.io/media/screenshots/727/7278d0a6c35375ede5112518520c75ed.jpg"
-                                   alt=""/></CarouselItem>
-            </Carousel>
+                <Carousel>
+                    {!screenshots.length
+                        ? <CarouselItem><img
+                            style={{width: '100%', objectFit: 'cover'}}
+                            src={loadingImg}
+                            alt=""/></CarouselItem>
+                        : screenshots.map((el, i) => <CarouselItem key={i}><img
+                            style={{width: '100%', objectFit: 'cover'}}
+                            src={el}
+                            alt=""/></CarouselItem>)}
+
+                </Carousel>
             </section>
 
 
             <section className='about__section'>
                 <h2>About</h2>
                 <span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa cum deserunt doloribus laudantium magni nesciunt nobis non nulla, obcaecati quasi qui sunt suscipit velit voluptatibus? Assumenda cumque impedit quam.
+                    {parse(description)}
+
+
                 </span>
             </section>
 
             <section className='website__section'>
                 <h2>Website</h2>
                 <span>
-                    www.oppa.ru
+                    <a target="_blank" rel="noopener noreferrer" className='desc__link' href={website}>{website}</a>
                 </span>
             </section>
         </div>

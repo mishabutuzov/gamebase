@@ -49,8 +49,8 @@ const PlatformDropdown = () => {
 
                     </div>
                     <div className={`${styles.dropdownBody} ${isOpen && styles.dropdownBodyOpen}`}>
-                        {items.map(item => (
-                            <div className={styles.dropdownItem} onClick={e => handleItemClick(e.target.id)}
+                        {items.map((item,i) => (
+                            <div key={i} className={styles.dropdownItem} onClick={e => handleItemClick(e.target.id)}
                                  id={item.id}>
                                 <span
                                     className={`${styles.dropdownItemDot} ${item.id == selectedItem && styles.dropdownItemDotSelected}`}>• </span>
