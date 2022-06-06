@@ -30,14 +30,13 @@ function App() {
         console.log("!!!!!!useLayoutEffect!!!!!", page)
     }, [dispatch,searchInput, selectedPlatform,selectedSort])
 
-    // // You can use any @media property
-    // const isDesktop = useMediaQuery('(min-width: 960px)');
-    // const isMobile = useMediaQuery('(max-width: 599px)');
-    // const isTablet = !isDesktop && !isMobile;
+
+
+
 
     return (
         <div className="App">
-            <Search/>
+
             <Filters/>
             <main className='global__main'>
                 <InfiniteScroll

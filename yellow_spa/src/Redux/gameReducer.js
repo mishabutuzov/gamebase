@@ -5,7 +5,6 @@ const defaultState = {
     status: null,
     gamesList: [],
     // [{url:'www.han.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'},{url:'www.han1.ru'}],
-
     searchInput: '',
     page: 1,
     count: 1,

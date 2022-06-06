@@ -48,7 +48,7 @@ const SortDropdown = () => {
                 <div className={styles.dropdown} onMouseOver={() => toggleDropdown(true)}
                      onMouseLeave={() => toggleDropdown(false)}>
                     <div className={styles.dropdownHeader}>
-                        {selectedItem ? `Platform: ${items.find(item => item.id == selectedItem).label}` : "Platform: All"}
+                        {selectedItem ? `Sort: ${items.find(item => item.id == selectedItem).label}` : "Sort: All"}
                         <i className={`fa fa-chevron-right ${styles.icon} ${isOpen && styles.iconOpen}`}></i>
 
                     </div>

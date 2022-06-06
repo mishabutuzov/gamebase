@@ -1,6 +1,6 @@
 :root {
     --dark: #100000;
-    --text: #ffffff;
+    --text: #61b8ff;
     --svg: #ea60ff;
     --nav: #243b4f;
     font-size: 1rem;
@@ -35,8 +35,12 @@ img {
     display: block;
 }
 
+h1{
+    font-size: 36px;
+    color: var(--text);
+}
+
 body,
-h1,
 h2,
 h3,
 h4,
@@ -59,6 +63,7 @@ body {
     margin: 0 auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
 }
 
 .website__section {
@@ -197,12 +202,13 @@ body {
 
 .description__page__container__title {
     word-wrap: break-word;
-    max-width: 70%;
+    max-width: 90%;
 }
 
 .about__section {
     flex-direction: column;
     justify-content: start;
+    padding: 0 5px 0 5px;
 }
 
 .about__section h2, span {
@@ -281,6 +287,13 @@ body {
     /*margin: 0 auto;*/
 }
 
+.carousel__img{
+width: 100%;
+    objectFit: 'cover';
+    height: auto;
+}
+
+
 
 @media screen and (min-width: 1127px) and (max-width: 7681px) {
     .card {
@@ -293,6 +306,8 @@ body {
 
     .description__page__container {
         flex-direction: column;
+        margin: 0;
+        width: 400px;
     }
 
     .carousel {
@@ -300,14 +315,14 @@ body {
     }
 
     .description__main__div {
-        margin: 0 15vw 0 15vw;
+        margin: 0 5vw 0 5vw;
         padding: 0 5vw 0 5vw;
         background-color: var(--dark);
         height: 100vh;
     }
 
     body {
-        background-color: #100f0f;
+        background-color: var(--dark);
     }
 
 
@@ -356,7 +371,7 @@ body {
 
 
 #shadowBox {
-    background-color: rgb(0, 0, 0);
+    background-color:var(--dark);
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.2);
     /* Black w/opacity/see-through */
@@ -399,6 +414,20 @@ body {
 .desc__link {
     text-decoration: none;
     color: gray;
+}
+
+.desktop__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.desktop__info > b,span,p {
+    margin: 15px 0 15px 0;
+}
+.desktop__info  span, a{
+    color: grey;
+    font-weight: 500;
+    word-wrap: break-word;
 }
 
 

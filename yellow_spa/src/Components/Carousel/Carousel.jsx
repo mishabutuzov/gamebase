@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 
 import "./Carousel.css";
+import {useSelector} from "react-redux";
 
 export const CarouselItem = ({ children, width }) => {
     return (
@@ -15,13 +16,17 @@ const Carousel = ({ children }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false);
 
+    const isMobile = useSelector(state => state.media.isMobile);
+    const isTablet = useSelector(state => state.media.isTablet);
+    const isDesktop = useSelector(state => state.media.isDesktop);
+
+
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
             newIndex = React.Children.count(children) - 1;
         } else if (newIndex >= React.Children.count(children)) {
             newIndex = 0;
         }
-
         setActiveIndex(newIndex);
     };
 
@@ -60,13 +65,13 @@ const Carousel = ({ children }) => {
                 })}
             </div>
             <div className="indicators">
-                {/*<button*/}
-                {/*    onClick={() => {*/}
-                {/*        updateIndex(activeIndex - 1);*/}
-                {/*    }}*/}
-                {/*>*/}
-                {/*    Prev*/}
-                {/*</button>*/}
+                {isDesktop && <button
+                    onClick={() => {
+                        updateIndex(activeIndex - 1);
+                    }}
+                >
+                    Prev
+                </button>}
                 {React.Children.map(children, (child, index) => {
                     return (
                         <button
@@ -75,17 +80,17 @@ const Carousel = ({ children }) => {
                                 updateIndex(index);
                             }}
                         >
-                            {/*{index + 1}*/}
+                            {isDesktop && index + 1}
                         </button>
                     );
                 })}
-                {/*<button*/}
-                {/*    onClick={() => {*/}
-                {/*        updateIndex(activeIndex + 1);*/}
-                {/*    }}*/}
-                {/*>*/}
-                {/*    Next*/}
-                {/*</button>*/}
+                {isDesktop && <button
+                    onClick={() => {
+                        updateIndex(activeIndex + 1);
+                    }}
+                >
+                    Next
+                </button>}
             </div>
         </div>
     );

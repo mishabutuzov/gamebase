@@ -7,24 +7,28 @@ import ReactDOM from 'react-dom'
 import gameDetailsReducer from "./Redux/gameDetailsReducer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DescriptionPage from "./Components/DescriptionPage";
+import Search from "./Components/Search/Search";
+import mediaReducer from "./Redux/mediaReducer";
 
 
 
 export const store = configureStore({
     reducer: {
         game: gameReducer,
-        details: gameDetailsReducer
+        details: gameDetailsReducer,
+        media: mediaReducer
     }
 })
 
 
 ReactDOM.render(
     <Provider store={store}>
+
         <Router>
+            <Search/>
             <Routes >
                 <Route path="/" element={<App />} />
                 <Route path="/details/:id" element={<DescriptionPage />} />
-
             </Routes>
         </Router>
     </Provider>, document.getElementById('root')
