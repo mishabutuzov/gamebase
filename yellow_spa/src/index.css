@@ -194,6 +194,7 @@ body {
 
 .description__page__container {
     justify-content: space-between;
+    align-items: center;
 }
 
 .description__page__container div {
@@ -304,10 +305,17 @@ width: 100%;
         display: flex;
     }
 
+    .description__page__container__rating {
+        margin-top: 15px;
+    }
+
+
     .description__page__container {
         flex-direction: column;
         margin: 0;
         width: 400px;
+        align-items: flex-start;
+
     }
 
     .carousel {
@@ -332,6 +340,8 @@ width: 100%;
     .card {
         flex-basis: calc((100% / 3));
     }
+
+
 }
 
 @media screen and (min-width: 400px) and (max-width: 967px) {
@@ -350,6 +360,9 @@ width: 100%;
     .main__nav {
         flex-direction: column;
     }
+
+
+
 
     .description__page__container__rating {
         display: none;

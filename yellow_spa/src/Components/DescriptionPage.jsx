@@ -66,12 +66,13 @@ function DescriptionPage(props) {
                             <p>Developer: <span>{developers_name}</span></p>
                             <p>Genre: <span>{genres_name}</span></p>
                             <p>Age rating: <span>{esrb_rating_name}</span></p>
+                            <p>Rating: <span>{rating}</span></p>
                         </div>
                     )}
 
-                    <div className='description__page__container__rating'>
-                        {rating}
-                    </div>
+                    {!isDesktop && <div className='description__page__container__rating'>
+                        Rating: {rating}
+                    </div>}
                 </div>
 
                 <Carousel>
