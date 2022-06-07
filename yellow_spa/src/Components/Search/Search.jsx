@@ -36,13 +36,13 @@ function Search(props) {
     return (
         <nav className='main__nav'>
             <div className="navbar__logo"
-                 onClick={() => {navigate('/')}}
+                 onClick={() => {navigate('/gamebase/')}}
             >GAMEBASE</div>
             <div className="navbar__container">
                 <FontAwesomeIcon className='navbar__icon' icon={faSearch}/>
                 <input placeholder="Search for games" type="search" className="navbar__input" ref={inputRef}
                 onChange={(e)=>{
-                    if(location.pathname.includes('details')) navigate('/');
+                    if(location.pathname.includes('details')) navigate('/gamebase/');
                     dispatch(setPage(1))
                     dispatch(setSearchInput(e.target.value))
                 }}
