@@ -6,7 +6,7 @@ import React from "react";
 import ReactDOM from 'react-dom'
 import gameDetailsReducer from "./Redux/gameDetailsReducer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import DescriptionPage from "./Components/DescriptionPage";
+import DescriptionPage from "./Components/DescriptionPage/DescriptionPage";
 import Search from "./Components/Search/Search";
 import mediaReducer from "./Redux/mediaReducer";
 

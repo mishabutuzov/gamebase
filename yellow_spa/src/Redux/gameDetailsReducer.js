@@ -86,9 +86,10 @@ const gameDetailsSlice = createSlice({
             state.website = payload.website
             state.reddit_url = payload.reddit_url
             state.released = payload.released
+
             state.developers_name = payload.developers[0].name
-            state.genres_name = payload.genres[0].name
-            state.esrb_rating_name = payload.esrb_rating.name
+            state.genres_name = payload.genres[0]?.name
+            state.esrb_rating_name = payload.esrb_rating?.name
 
 
             console.log(payload)
