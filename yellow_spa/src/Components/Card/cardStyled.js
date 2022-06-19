@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { size, device } from "../mediaStyled";
+import { device, size } from "../mediaStyled";
 
 export const CardWrapper = styled.div`
   @media ${device.laptopL} {
@@ -58,9 +58,13 @@ export const CardRatingDate = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  
-
-  height: 20vh;
+  height: 20vh; //MEDIA
   object-fit: cover;
- display: block;
+  display: block;
+
+  //=======================================Media==========================================
+
+  @media (max-width: ${size.mobileL}) {
+    height: 30vh;
+  }
 `;
