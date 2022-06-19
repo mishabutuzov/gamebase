@@ -1,13 +1,27 @@
 {
   "files": {
-    "main.css": "/gamebase/static/css/main.5d83c688.css",
-    "main.js": "/gamebase/static/js/main.1574019f.js",
+    "main.css": "/gamebase/static/css/main.386aeb10.css",
+    "main.js": "/gamebase/static/js/main.7d91c3dc.js",
+    "static/media/linux.svg": "/gamebase/static/media/linux.e08349ed83cb12ece9bec924f3d4bef1.svg",
+    "static/media/web.svg": "/gamebase/static/media/web.52ae85dcab875db50f73cea0dccf1c04.svg",
+    "static/media/android.svg": "/gamebase/static/media/android.ef4997b7782caa544f442954df607657.svg",
     "index.html": "/gamebase/index.html",
-    "main.5d83c688.css.map": "/gamebase/static/css/main.5d83c688.css.map",
-    "main.1574019f.js.map": "/gamebase/static/js/main.1574019f.js.map"
+    "static/media/copyTitle.svg": "/gamebase/static/media/copyTitle.fc1133a11d1d5d6f8f4ae046eafe1b04.svg",
+    "static/media/xbox.svg": "/gamebase/static/media/xbox.73ae45c0cec2e50a903d3ab1f821f069.svg",
+    "static/media/sega.svg": "/gamebase/static/media/sega.73737f843661a60d1ffcb97ba550c08a.svg",
+    "static/media/mac.svg": "/gamebase/static/media/mac.1be1267a0da8e718fb07e270e018e43f.svg",
+    "static/media/ps.svg": "/gamebase/static/media/ps.ecb9f256bdbf6e0d2914b23c25096282.svg",
+    "static/media/ios.svg": "/gamebase/static/media/ios.bc5873d5a24ddbfc91fb151aed3db3c1.svg",
+    "static/media/atari.svg": "/gamebase/static/media/atari.78448b76a645955771e1317de7ac6a20.svg",
+    "static/media/commodore.svg": "/gamebase/static/media/commodore.78448b76a645955771e1317de7ac6a20.svg",
+    "static/media/nintendo.svg": "/gamebase/static/media/nintendo.04fcc2fb82e356e8eabdf981c94862d3.svg",
+    "static/media/3do.svg": "/gamebase/static/media/3do.0835bd15b73cb48aa465595cbb8a2362.svg",
+    "static/media/win.svg": "/gamebase/static/media/win.1eb2ae366b46e9c7cd72873a6650ecca.svg",
+    "main.386aeb10.css.map": "/gamebase/static/css/main.386aeb10.css.map",
+    "main.7d91c3dc.js.map": "/gamebase/static/js/main.7d91c3dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d83c688.css",
-    "static/js/main.1574019f.js"
+    "static/css/main.386aeb10.css",
+    "static/js/main.7d91c3dc.js"
   ]
 }
