@@ -14,7 +14,10 @@ const defaultState = {
     released:'',
     developers_name:'',
     genres_name:'',
-    esrb_rating_name:''
+    esrb_rating_name:'',
+    metacritic:'',
+    parentPlatforms:[],
+    playtime:''
 }
 
 
@@ -85,14 +88,19 @@ const gameDetailsSlice = createSlice({
             state.rating = payload.rating
             state.website = payload.website
             state.reddit_url = payload.reddit_url
-            state.released = payload.released
+            state.released = payload.released?.replaceAll("-", ".").split(".").reverse().join(".")
+            state.metacritic = payload.metacritic
 
             state.developers_name = payload.developers[0].name
             state.genres_name = payload.genres[0]?.name
             state.esrb_rating_name = payload.esrb_rating?.name
+            state.playtime = payload.playtime
 
 
-            console.log(payload)
+            state.parentPlatforms = payload.parent_platforms.map(platform => platform.platform.slug)
+
+
+            // console.log(payload)
             state.status = 'success'
         },
         [getGameDetails.rejected]: (state, action) => {
@@ -105,9 +113,9 @@ const gameDetailsSlice = createSlice({
             state.statusScreenshots = 'loading'
         },
         [getGameScreenshots.fulfilled]: (state, {payload}) => {
-            state.screenshots = payload.results.map(el=>el.image)
+            state.screenshots = payload.results.map(el=> ({original : el.image, thumbnail: el.image}))
 
-            console.log(payload)
+            // console.log(payload)
             state.statusScreenshots = 'success'
         },
         [getGameScreenshots.rejected]: (state, action) => {

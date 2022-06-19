@@ -10,7 +10,8 @@ const defaultState = {
     count: 1,
     isEndOfList: false,
     selectedPlatform: 0,
-    selectedSort: 'ALL'
+    selectedSort: 'ALL',
+    isDropdownOpened:false
 }
 
 export const getAllGames = createAsyncThunk(
@@ -44,6 +45,9 @@ const gameSlice = createSlice({
     name: 'gameSlice',              //CHTO ETO????????????
     initialState: defaultState,  //OK!!!!!!!!!!!!!
     reducers: {
+        setDropdownOpened:(state, action) => {
+            state.isDropdownOpened = action.payload;
+        },
         setSearchInput: (state, action) => {
             state.page = 1;
             state.gamesList = [];
@@ -65,12 +69,12 @@ const gameSlice = createSlice({
     },
     extraReducers: {
         [getAllGames.pending]: (state, action) => {
-            console.log('ZAPROS')
+            // console.log('ZAPROS')
             state.status = 'loading'
 
         },
         [getAllGames.fulfilled]: (state, {payload}) => {
-            console.log(payload)
+            // console.log(payload)
             state.count = payload.count;
 
             if (payload.hasOwnProperty('results')) {
@@ -82,16 +86,16 @@ const gameSlice = createSlice({
                 state.isEndOfList = true;
             }
 
-            console.log('POLUCHILI')
+            // console.log('POLUCHILI')
             state.status = 'success'
         },
         [getAllGames.rejected]: (state, action) => {
             state.status = 'failed'
-            console.log('OTPROS')
+            // console.log('OTPROS')
 
         },
     }
 })
 
-export const {setSearchInput, setPage, setPlatform, setSort} = gameSlice.actions
+export const {setSearchInput, setPage, setPlatform, setSort, setDropdownOpened} = gameSlice.actions
 export default gameSlice.reducer

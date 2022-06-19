@@ -4,16 +4,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@mui/material": "^5.8.4",
+    "@mui/styled-engine-sc": "^5.8.0",
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
     "history": "^5.3.0",
     "html-react-parser": "^1.4.14",
     "lodash.debounce": "^4.0.8",
     "react": "^18.1.0",
+    "react-alert-template-snackbar-material-ui": "^1.0.6",
     "react-dom": "^18.1.0",
+    "react-image-gallery": "^1.2.8",
     "react-infinite-scroll-component": "^6.1.0",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
@@ -22,7 +28,8 @@
     "react-touch-carousel": "^0.10.2",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -49,6 +56,11 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
-    "react-redux": "^8.0.2"
+    "prettier": "2.6.2",
+    "react-redux": "^8.0.2",
+    "sass": "^1.52.3"
+  },
+  "prettier": {
+    "bracketSameLine": true
   }
 }

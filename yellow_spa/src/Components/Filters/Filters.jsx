@@ -1,18 +1,16 @@
 import React from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleDown, faArrowDown, faArrowUp} from "@fortawesome/free-solid-svg-icons";
-import PlatformDropdown from "../../Dropdowns/PlatformDropdown";
-import SortDropdown from "../../Dropdowns/SortDropdown";
+import {setPlatform, setSort} from "../../Redux/gameReducer";
+import UniversalDropdown from "../../Dropdowns/UniversalDropdown";
+import {dataPlatform, dataSort} from "../../Dropdowns/dropdownData";
+import {FiltersStyled} from "./FiltersStyled";
+
 
 function Filters(props) {
     return (
-        <section className='filter__container__section'>
-
-            <SortDropdown/>
-            <PlatformDropdown/>
-            {/*<PlatformDropdown/>*/}
-
-        </section>
+        <FiltersStyled>
+            <UniversalDropdown data={dataSort} itemAction={setSort}/>
+            <UniversalDropdown data={dataPlatform} itemAction={setPlatform}/>
+        </FiltersStyled>
     );
 }
 

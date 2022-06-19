@@ -1,0 +1,33 @@
+export const dataSort = [
+    {id: 0, label: "ALL", value:'ALL'},
+    {id: 1, label: "🠕 Name", value:'name'},
+    {id: 2, label: "🠗 Name", value:'-name'},
+    {id: 3, label: "🠕 Released", value:'released'},
+    {id: 4, label: "🠗 Released", value:'-released'},
+    {id: 5, label: "🠕 Added", value:'added'},
+    {id: 6, label: "🠗 Added", value:'-added'},
+    {id: 7, label: "🠕 Created", value:'created'},
+    {id: 8, label: "🠗 Created", value:'-created'},
+    {id: 9, label: "🠕 Updated", value:'updated'},
+    {id: 10, label: "🠗 Updated", value:'-updated'},
+    {id: 11, label: "🠕 Rating", value:'rating'},
+    {id: 12, label: "🠗 Rating", value:'-rating'},
+    {id: 13, label: "🠕 Metacritic", value:'metacritic'},
+    {id: 14, label: "🠗 Metacritic", value:'-metacritic'}]
+
+export  const dataPlatform = [
+    {id: 0, label: "ALL"},
+    {id: 1, label: "PC"},
+    {id: 2, label: "PlayStation"},
+    {id: 3, label: "Xbox"},
+    {id: 4, label: "iOS"},
+    {id: 5, label: "Apple Macintosh"},
+    {id: 6, label: "Linux"},
+    {id: 7, label: "Nintendo"},
+    {id: 8, label: "Android"},
+    {id: 9, label: "Atari"},
+    {id: 10, label: "Commodore/Amiga"},
+    {id: 11, label: "SEGA"},
+    {id: 12, label: "3DO"},
+    {id: 13, label: "Neo Geo"},
+    {id: 14, label: "Web"}];

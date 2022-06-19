@@ -10,7 +10,7 @@
 /*    font-family: 'Source Sans Pro', sans-serif;*/
 /*}*/
 
-.dropdownContainer{
+.dropdownContainer {
     position: static;
     width: 240px;
     height: 50px;
@@ -21,26 +21,25 @@
 .dropdown {
     width: 240px;
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.1);
-    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+    background-color: #212121;
     color: #4B4D54;
     position: absolute;
 }
 
 .dropdownHeader {
-    padding: 10px 5px 10px 15px;
+    padding: 10px 10px 10px 15px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #4B4D54;
+    color: #acacac;
 }
 
 .dropdownBody {
-    padding: 5px;
-    border-top: 1px solid #E5E8EC;
+    /*padding: 5px;*/
+    border-top: 1px solid #373737;
     display: none;
-
 }
 
 .dropdownBodyOpen {
@@ -51,16 +50,36 @@
 }
 
 .dropdownItem {
+    color: #acacac;
     padding: 10px;
+    /*border-left: 1px solid white;*/
+    /*border-right: 1px solid white;*/
+}
+
+
+.dropdownItem:hover {
+    background-color: #292929;
+    cursor: pointer;
+    /*transition: .1s all ease;*/
+
 }
 
 .dropdownItem:hover {
+    box-shadow: 0px 0px 1px 0px rgba(205, 205, 205, 0.5);
     cursor: pointer;
+    transition: box-shadow 2s ease;
 }
+
+.dropdownItem:hover:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
 
 .dropdownItemDot {
     opacity: 0;
-    color: #91A5BE;
+    color: #acacac;
     transition: all .2s ease-in-out;
 }
 
@@ -70,11 +89,62 @@
 
 .icon {
     font-size: 13px;
-    color: #91A5BE;
+    color: #acacac;
     transform: rotate(0deg);
     transition: all .2s ease-in-out;
 }
 
 .iconOpen {
     transform: rotate(90deg);
+}
+
+@media (max-width: 510px) {
+    .dropdown {
+        width: 200px;
+    }
+
+    .dropdownContainer {
+        width: 200px;
+    }
+}
+
+@media (max-width: 425px) {
+    .dropdown {
+        width: 180px;
+        font-size: small;
+    }
+
+    .dropdownContainer {
+        width: 180px;
+    }
+
+    .dropdownContainer {
+        height: 40px;
+    }
+}
+
+@media (max-width: 375px) {
+    .dropdown {
+        width: 155px;
+        font-size: x-small;
+    }
+    .dropdownContainer {
+        width: 155px;
+    }
+    .dropdownContainer {
+        height: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .dropdown {
+        width: 140px;
+        font-size: xx-small;
+    }
+    .dropdownContainer {
+        width: 140px;
+    }
+    .dropdownContainer {
+        height: 40px;
+    }
 }

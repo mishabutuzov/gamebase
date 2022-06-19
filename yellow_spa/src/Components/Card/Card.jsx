@@ -1,24 +1,25 @@
-import React from 'react';
-import {useNavigate} from "react-router";
+import React from "react";
+import {
+  CardImage,
+  CardRatingDate,
+  CardTitle,
+  CardWrapper,
+} from "./cardStyled";
+import useJumpTo from "../../hooks/useJumpTo";
 
-function Card(props) {
-    const navigate = useNavigate();
+function Card({ id, avatar, title, rating, timeStamp }) {
+  const jumpToDetails = useJumpTo(id);
 
-    return (
-        <div className="card"
-        onClick={()=>{
-            console.log(props.id)
-            navigate(`/details/${props.id}`)
-        }}>
-            <img className='card__image' src={props.avatar} alt="Avatar"/>
-                <h2><b>{props.title}</b></h2>
-                <div className='card__rating__date'>
-                    <span>{props.rating}</span>
-                    <span>{props.timeStamp}</span>
-                </div>
-
-        </div>
-    );
+  return (
+    <CardWrapper onClick={jumpToDetails}>
+      <CardImage src={avatar} alt="Avatar"></CardImage>
+      <CardTitle>{title}</CardTitle>
+      <CardRatingDate>
+        <span>{rating}</span>
+        <span>{timeStamp}</span>
+      </CardRatingDate>
+    </CardWrapper>
+  );
 }
 
 export default Card;
