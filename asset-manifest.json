@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gamebase/static/css/main.386aeb10.css",
-    "main.js": "/gamebase/static/js/main.68c260b2.js",
+    "main.css": "/gamebase/static/css/main.ebd431fe.css",
+    "main.js": "/gamebase/static/js/main.cd065b1e.js",
     "static/media/linux.svg": "/gamebase/static/media/linux.e08349ed83cb12ece9bec924f3d4bef1.svg",
     "static/media/web.svg": "/gamebase/static/media/web.52ae85dcab875db50f73cea0dccf1c04.svg",
     "static/media/android.svg": "/gamebase/static/media/android.ef4997b7782caa544f442954df607657.svg",
@@ -17,11 +17,11 @@
     "static/media/nintendo.svg": "/gamebase/static/media/nintendo.04fcc2fb82e356e8eabdf981c94862d3.svg",
     "static/media/3do.svg": "/gamebase/static/media/3do.0835bd15b73cb48aa465595cbb8a2362.svg",
     "static/media/win.svg": "/gamebase/static/media/win.1eb2ae366b46e9c7cd72873a6650ecca.svg",
-    "main.386aeb10.css.map": "/gamebase/static/css/main.386aeb10.css.map",
-    "main.68c260b2.js.map": "/gamebase/static/js/main.68c260b2.js.map"
+    "main.ebd431fe.css.map": "/gamebase/static/css/main.ebd431fe.css.map",
+    "main.cd065b1e.js.map": "/gamebase/static/js/main.cd065b1e.js.map"
   },
   "entrypoints": [
-    "static/css/main.386aeb10.css",
-    "static/js/main.68c260b2.js"
+    "static/css/main.ebd431fe.css",
+    "static/js/main.cd065b1e.js"
   ]
 }
