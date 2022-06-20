@@ -4,6 +4,9 @@
   --svg: #ea60ff;
   --nav: #243b4f;
   font-size: 1rem;
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
 ::placeholder {
@@ -40,6 +43,10 @@ span {
 a{
   text-decoration: none;
   color: gray;
+}
+
+.particles{
+  z-index: -1000 !important;
 }
 
 

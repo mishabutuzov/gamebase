@@ -27,6 +27,7 @@ function MyGallery({ screenshots, isDesktop, isMobile }) {
           showPlayButton={false}
           onImageLoad={onImageLoadHandler}
           useBrowserFullscreen={false}
+          disableThumbnailScroll
         />
       </div>
       {!isLoaded && (

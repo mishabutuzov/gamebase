@@ -9,6 +9,7 @@ import DescriptionPageContainer from "./Components/DescriptionPage/DescriptionPa
 import Search from "./Components/Search/Search";
 import mediaReducer from "./Redux/mediaReducer";
 import {createRoot} from "react-dom/client";
+import dropdownReducer from "./Redux/dropdownReducer";
 
 
 export const store = configureStore({
@@ -16,6 +17,7 @@ export const store = configureStore({
     game: gameReducer,
     details: gameDetailsReducer,
     media: mediaReducer,
+    dropdown: dropdownReducer
   },
 });
 

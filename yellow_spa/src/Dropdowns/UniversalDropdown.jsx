@@ -2,20 +2,21 @@ import React, { useEffect, useState } from "react";
 import styles from "./PlatformDropdown.module.css";
 import { useDispatch } from "react-redux";
 import { setDropdownOpened } from "../Redux/gameReducer";
+import {setDefaultTitlePlatform, setSelectedItemPlatform} from "../Redux/dropdownReducer";
 
-const UniversalDropdown = ({ data, itemAction }) => {
+const UniversalDropdown = ({ data, itemAction, selectedItem, setSelectedItem}) => {
   const [isOpen, setOpen] = useState(false);
   const [items, setItem] = useState(data);
-  const [selectedItem, setSelectedItem] = useState(0);
+  // const [selectedItem, setSelectedItem] = useState(0);
   const [defaultTitle, setDefaultTitle] = useState("");
   const dispatch = useDispatch();
   let sortedId = null;
 
   useEffect(() => {
     if (data[0]?.value) {
-      setDefaultTitle(() => "Sort");
+      setDefaultTitle("Sort");
     } else {
-      setDefaultTitle(() => "Platform");
+      setDefaultTitle("Platform");
     }
   }, []);
 
@@ -32,10 +33,10 @@ const UniversalDropdown = ({ data, itemAction }) => {
 
     if (data[0]?.value) {
       sortedId = items.find((item) => item.id == id).value;
-      setDefaultTitle(() => "Sort");
+      setDefaultTitle("Sort");
     } else {
       sortedId = id;
-      setDefaultTitle(() => "Platform");
+     setDefaultTitle("Platform");
     }
 
     dispatch(itemAction(sortedId));

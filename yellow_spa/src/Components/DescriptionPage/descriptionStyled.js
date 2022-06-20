@@ -34,7 +34,8 @@ export const Container = styled.div`
   //gap: 0px 0px;
   grid-auto-flow: row;
   word-break: break-word;
-  row-gap: 10px;
+  row-gap: 30px;
+  column-gap: 20px;
   
   grid-template-areas:
     ${props => props.isAboutFullWidth
@@ -61,7 +62,7 @@ export const GameInfo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 30px 0 30px;
+  padding: 0 0px 0 0px;
 `;
 export const SliderMain = styled.div`
   grid-area: SliderMain;
@@ -69,11 +70,11 @@ export const SliderMain = styled.div`
 
 export const AboutInfo = styled.div`
   grid-area: AboutInfo;
-  padding: 30px;
+  //padding: 30px;
 `;
 export const LinksInfo = styled.div`
   grid-area: LinksInfo;
-  padding: 30px;
+  //padding: 30px;
 `;
 
 

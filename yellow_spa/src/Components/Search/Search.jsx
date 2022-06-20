@@ -4,6 +4,7 @@ import MainNavSearch from "./MainNavSearch";
 import {MainNav} from "./searchStyled";
 import useMediaControl from "../../hooks/useMediaControl";
 import useJumpTo from "../../hooks/useJumpTo";
+import ParticlesBackground from "../Helpers/particles/ParticlesBackground";
 
 
 function Search(props) {
@@ -13,6 +14,7 @@ function Search(props) {
     return (
         <MainNav>
             <MainNavLogo jumpToHome={jumpToHome}/>
+            <ParticlesBackground/>
             <MainNavSearch jumpToHome={jumpToHome}/>
         </MainNav>
     );

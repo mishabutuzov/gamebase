@@ -5,6 +5,10 @@
     border-radius: 10px;
 }
 
+.image-gallery-thumbnail .image-gallery-thumbnail-image{
+    border-radius: 8px !important;
+}
+
 
 /*mobileS: "320px",*/
 /*mobileM: "375px",*/
@@ -87,8 +91,9 @@
 }
 .image-gallery-thumbnail.active, .image-gallery-thumbnail:focus{
     outline: none;
-    border: 4px solid var(--text) !important;
+    border: 2px solid var(--text) !important;
 }
 .image-gallery-thumbnail:hover {
-    border: 4px solid red !important;
+    border: 1px solid wheat !important;
 }
+
