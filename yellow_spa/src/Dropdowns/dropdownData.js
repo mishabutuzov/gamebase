@@ -1,19 +1,19 @@
 export const dataSort = [
     {id: 0, label: "ALL", value:'ALL'},
-    {id: 1, label: "🠕 Name", value:'name'},
-    {id: 2, label: "🠗 Name", value:'-name'},
-    {id: 3, label: "🠕 Released", value:'released'},
-    {id: 4, label: "🠗 Released", value:'-released'},
-    {id: 5, label: "🠕 Added", value:'added'},
-    {id: 6, label: "🠗 Added", value:'-added'},
-    {id: 7, label: "🠕 Created", value:'created'},
-    {id: 8, label: "🠗 Created", value:'-created'},
-    {id: 9, label: "🠕 Updated", value:'updated'},
-    {id: 10, label: "🠗 Updated", value:'-updated'},
-    {id: 11, label: "🠕 Rating", value:'rating'},
-    {id: 12, label: "🠗 Rating", value:'-rating'},
-    {id: 13, label: "🠕 Metacritic", value:'metacritic'},
-    {id: 14, label: "🠗 Metacritic", value:'-metacritic'}]
+    {id: 1, label: "⬆️Name", value:'name'},
+    {id: 2, label: "⬇️Name", value:'-name'},
+    {id: 3, label: "⬆️Released", value:'released'},
+    {id: 4, label: "⬇️Released", value:'-released'},
+    {id: 5, label: "⬆️Added", value:'added'},
+    {id: 6, label: "⬇️Added", value:'-added'},
+    {id: 7, label: "⬆️Created", value:'created'},
+    {id: 8, label: "⬇️Created", value:'-created'},
+    {id: 9, label: "⬆️Updated", value:'updated'},
+    {id: 10, label: "⬇️Updated", value:'-updated'},
+    {id: 11, label: "⬆️Rating", value:'rating'},
+    {id: 12, label: "⬇️Rating", value:'-rating'},
+    {id: 13, label: "⬆️Metacritic", value:'metacritic'},
+    {id: 14, label: "⬇️Metacritic", value:'-metacritic'}]
 
 export  const dataPlatform = [
     {id: 0, label: "ALL"},
