@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gamebase/static/css/main.ebd431fe.css",
-    "main.js": "/gamebase/static/js/main.60a74510.js",
+    "main.js": "/gamebase/static/js/main.8d757d83.js",
     "static/media/linux.svg": "/gamebase/static/media/linux.e08349ed83cb12ece9bec924f3d4bef1.svg",
     "static/media/web.svg": "/gamebase/static/media/web.52ae85dcab875db50f73cea0dccf1c04.svg",
     "static/media/android.svg": "/gamebase/static/media/android.ef4997b7782caa544f442954df607657.svg",
@@ -18,10 +18,10 @@
     "static/media/3do.svg": "/gamebase/static/media/3do.0835bd15b73cb48aa465595cbb8a2362.svg",
     "static/media/win.svg": "/gamebase/static/media/win.1eb2ae366b46e9c7cd72873a6650ecca.svg",
     "main.ebd431fe.css.map": "/gamebase/static/css/main.ebd431fe.css.map",
-    "main.60a74510.js.map": "/gamebase/static/js/main.60a74510.js.map"
+    "main.8d757d83.js.map": "/gamebase/static/js/main.8d757d83.js.map"
   },
   "entrypoints": [
     "static/css/main.ebd431fe.css",
-    "static/js/main.60a74510.js"
+    "static/js/main.8d757d83.js"
   ]
 }
