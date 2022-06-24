@@ -41,6 +41,7 @@ export const CardTitle = styled.h2`
   margin: 0;
   color: white;
   padding: 10px;
+  padding-left: 20px;
   font-weight: 700;
   word-wrap: break-word;
 `;
