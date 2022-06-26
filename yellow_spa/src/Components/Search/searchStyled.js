@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { size, device } from "../mediaStyled";
+import { device, size } from "../mediaStyled";
 
 export const MainNav = styled.nav`
   @media (max-width: ${size.mobileL}) {
@@ -70,6 +70,20 @@ export const MainNavSearchWrapper = styled.div`
 }
 `;
 
+// export const MainNavLogoWrapper = styled.div`
+//   color: white;
+//   font-size: xx-large;
+//   text-align: center;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-weight: 800;
+//   cursor: pointer;
+//
+//   & span {
+//     color: var(--text);
+//   }
+// `;
 export const MainNavLogoWrapper = styled.div`
   color: white;
   font-size: xx-large;
@@ -80,7 +94,54 @@ export const MainNavLogoWrapper = styled.div`
   font-weight: 800;
   cursor: pointer;
 
+  //transform: translate(-50%, -50%);
+
+  //color: white;
+&:hover{
   & span {
     color: var(--text);
+    transition: color 1s;
   }
+}
+
+  &::before {
+    content: "GAMEBASE";
+    position: absolute;
+    color: var(--text);
+    animation: wave 23s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      clip-path: polygon(
+        0 42%,
+        13% 48%,
+        26% 55%,
+        41% 64%,
+        56% 65%,
+        69% 58%,
+        84% 45%,
+        100% 38%,
+        100% 100%,
+        0% 100%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        0 63%,
+        14% 57%,
+        25% 50%,
+        40% 42%,
+        56% 40%,
+        71% 44%,
+        84% 50%,
+        100% 60%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+
+
 `;
